@@ -1,4 +1,4 @@
-class CreatePosts < ActiveRecord::Migration
+class CreateUsers < ActiveRecord::Migration
   def change
     create_table :posts do |t|
       t.string :location
