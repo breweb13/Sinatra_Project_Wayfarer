@@ -1,9 +1,9 @@
-<h2>Edit a new post here !</h2>
+<h1>Edit a new post here !</h1>
 
-<form action="/posts/#{@post.id}" method="post" >
+<form action="/posts/<%= @post.id %>" method="post" >
 <input type="hidden" name="_method" value="patch">
    Photo:<input type="text" name="image_url" value="">
    Location: <input type="text" name="Location">
    Journal: <input type="text" name="Journal">
-    <input type="submit" value= "Create Post" >
+    <input type="submit" value= "Edit Post" >
 </form>

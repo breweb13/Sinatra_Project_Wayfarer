@@ -16,8 +16,7 @@ end
   #create a new post
   post '/posts' do
     @post = Post.new(params)
-    post.save
-    redirect '/posts'
+    redirect "/users/#{@post.id}"
  end
 
   # gets 1 post
@@ -43,5 +42,5 @@ end
     delete '/posts/:id' do
     @post = Post.find_by_id(params["id"])
     end
-
+    
 end
