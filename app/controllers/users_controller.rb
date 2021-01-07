@@ -10,18 +10,18 @@ class UsersController < ApplicationController
   post '/signup' do
       user = User.new(params)
          if user.save
-          flash[:notice] = "Hey Wayfarer, you are all set!" 
+          flash[:notice] = "You have succesfully signed up!" 
           session[:user_id] = user.id 
           redirect to '/posts'
          else
-          flash.now[:error] = "Oh snap, let's try again!"
-          redirect 'users/signup'
+          flash.now[:error] = "Something went wrong, please try again"
+          erb :'users/signup'
          end
   end
 
   get '/login' do 
       if logged_in?
-          redirect '/posts'
+          redirect  to '/posts'
       else
           erb :'/users/login'
       end
@@ -31,19 +31,26 @@ class UsersController < ApplicationController
       @current_user = User.find_by(username: params[:username])
       if @current_user && @current_user.authenticate(params[:password]) 
           session[:user_id] = @current_user.id
-          flash[:notice] = "Welcome Wayfarer!" 
-          redirect '/posts'
-          
+          flash[:notice] = "You have succesfully logged in!" 
+          redirect to '/posts'
       else
-          flash.now[:error] = "Oh-huh! Something is wrong, please try again"
-          redirect 'users/login'
+          if @current_user
+              flash.now[:error] = "Oh-huh! Something is wrong, please try again"
+              erb :'users/login'
+          else
+              flash.now[:error] = "Oh-huh! Something is wrong, please try again"
+              erb :'users/login'
           end
       end
   end 
 
   get '/logout' do 
-      session.clear 
-      redirect '/'
+      if logged_in?
+          session.clear 
+          redirect to '/'
+      else
+          redirect to '/'
+      end
   end
 
 end
