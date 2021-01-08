@@ -12,11 +12,8 @@ class ApplicationController < Sinatra::Base
 
 
   get "/" do
-    if logged_in?
-      redirect to '/posts'
-    else
-    erb index
-    end
+    
+    erb :welcome
   end
 
   helpers do 
@@ -34,9 +31,13 @@ class ApplicationController < Sinatra::Base
     end
 
     def redirect_to_if_not_logged_in
-      redirect '/login' unless logged_in?
+      redirect '/users/login' unless logged_in?
     end
 
+  end
+
+  def authorized_to_edit?(post)      
+    post.user == current_user    
   end
 
 end
