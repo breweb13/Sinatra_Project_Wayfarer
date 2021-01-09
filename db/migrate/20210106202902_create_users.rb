@@ -1,10 +1,11 @@
 class CreateUsers < ActiveRecord::Migration
   def change
-    create_table :posts do |t|
-      t.string :location
+    
+    create_table :users do |t|
+      t.string :username
+      t.string :password_digest
       t.string :image_url
-      t.text :journal
-      t.integer :user_id #belongs to user 
+      
 
       t.timestamps null: false
     end
