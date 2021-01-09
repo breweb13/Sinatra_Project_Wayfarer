@@ -1,5 +1,11 @@
 <h1 style="color:#f39233 ;"> Nomad Travels </h1>
 
-<% @posts.each do |post| %>
-    <h4><a href="/posts/ <%= post.id %>"><%= post.location %></a></h4>
-<% end %>
+
+
+<div class="collection">
+    
+    <% @posts.each do |post| %>
+        <a class="collection-item" href="/posts/ <%= post.id %>"><%= post.location %></a>
+    <% end %>
+</div>
+            
