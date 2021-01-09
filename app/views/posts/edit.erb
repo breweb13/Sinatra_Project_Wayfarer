@@ -1,4 +1,6 @@
-<h1 style="color:#f39233;">Edit Post!</h1>
+<div class="container"> 
+
+<h4 style="color:#1a237e;">Edit Post!</h4>
 
 <form class="" action="/posts/<%= @post.id %>" method="post">
 <input type="hidden" name="_method" value="patch">
@@ -11,6 +13,8 @@
 <label for="journal">Journal:</label>
 <textarea name="journal" style="width:600; height:auto;"><%= @post.journal %></textarea>
 <br>
-<button class="btn waves-effect deep-purple accent-2"  type="submit" name="action">Edit Post!</button>
+<button class="btn waves-effect  indigo darken-4"  type="submit" name="action">Edit Post!</button>
 
 </form>
+
+</div>
