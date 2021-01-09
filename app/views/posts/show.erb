@@ -1,12 +1,18 @@
 <h2> Digital Nomad Life</h2> 
 
-<h3 style="color:#f39233;"><%= @post.location %></h3>
-    <img src="<%= @post.image_url %>" alt="<%= @post.location %>" height="200" width="200">
-    <br><br>
-    <strong>Created at: <%= @post.created_at %></strong>
-    <p><%= @post.journal %></p>
 
-<% if authorized_to_edit?(@post) %>
+
+
+
+<div class="row">
+ <div class="col s7">
+ <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="<%= @post.image_url %>" alt="<%= @post.location %>" height="200" width="200">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4"><%= @post.location%><i class="material-icons right">more_vert</i></span>
+      <% if authorized_to_edit?(@post) %>
   
   <a href="/posts/<%= @post.id %>/edit">Edit Post</a>
 
@@ -16,3 +22,14 @@
   </form>
 
 <% end %>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4"><%= @post.location%><i class="material-icons right">close</i></span>
+      
+      <p><%= @post.journal %></p>
+    </div>
+  </div>
+ </div>
+ 
+ </div>
+            
