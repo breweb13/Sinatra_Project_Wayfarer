@@ -1,25 +1,48 @@
 <!Doctype html>
 <html>
   <head>
-      <title>Wayfarer Tracker</title>
       <meta charset="UTF-8">
+       <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
   </head>
   <body>
-  <div class="nav">
+  <nav>
+    <div class="nav-wrapper light-blue darken-3">
+      <a href="#" class="brand-logo">Wayfarer Tracker</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+
       <% if logged_in? %>
-        <a href="/logout">Logout</a>
-        <a href="/posts">All Posts</a>
-        <a href="/posts/new">Create Post</a>
+       <li> <a href="/posts">All Posts</a></li>
+       <li><a href="/posts/new">Create Post</a></li>
+       <li> <a href="/logout">Logout</a></li>
+        <% else %>
+        <li><a href="/login">Log In</a> </li>
+        <li><a href="/signup">Sign Up</a></li>
       <%  end %>
+       </ul>
     </div>
-  <h1> Wayfarer Tracker </h1>
+  </nav>
+
+  
   <% flash.keys.each do |type| %>
   <div data-alert class="flash <%= type %> alert-box radius">
     <%= flash[type] %>
     <a href="#" class="close">&times;</a>
   </div>
 <% end %>
-    <%= yield %>
+  <div class="">
+  <%= yield %>
+</div>
   </body>
 </html>
 
+
+       
+   
+        
