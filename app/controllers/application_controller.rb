@@ -35,7 +35,7 @@ class ApplicationController < Sinatra::Base
     end
 
     def redirect_to_if_logged_in
-      redirect '/projects' if logged_in?
+      redirect '/posts' if logged_in?
     end
 
     def redirect_to_if_not_logged_in
