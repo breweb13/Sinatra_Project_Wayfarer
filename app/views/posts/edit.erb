@@ -1,9 +1,16 @@
-<h1>Edit a new post here !</h1>
+<h1 style="color:#f39233;">Edit Post!</h1>
 
-<form action="/posts/<%= @post.id %>" method="post" >
+<form class="" action="/posts/<%= @post.id %>" method="post">
 <input type="hidden" name="_method" value="patch">
-   Photo:<input type="text" name="image_url" value="">
-   Location: <input type="text" name="Location">
-   Journal: <input type="text" name="Journal">
-    <input type="submit" value= "Edit Post" >
+<label for="location">location:</label>
+<input type="text" name="location" value="<%= @post.location %>">
+<br>
+<label for="image_url">Image URL:</label>
+<input type="text" name="image_url" value="<%= @post.image_url %>">
+<br>
+<label for="journal">Journal:</label>
+<textarea name="journal" style="width:600; height:auto;"><%= @post.journal %></textarea>
+<br>
+<button class="btn waves-effect deep-purple accent-2"  type="submit" name="action">Edit Post!</button>
+
 </form>
