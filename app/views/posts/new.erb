@@ -1,24 +1,59 @@
-<h1>Make a new post here !</h1>
+<div class="container"> 
+<h4>Post Your Digital Nomad Journey </h4>
+        
 
 
-<form action="/posts" method="post">
-<input type="hidden" name="posts[user_id]" value="<%=current_user.id%>">
+  
+
+
+
+  <div class="row">
+  <form action="/posts" method="post" class="col s12">
+        
+
+
+  <div class="row">
+    <form class="col s12">
+
+
+  <div class="row">
+  <form action="/posts" method="post" class="col s12">
+  <input type="hidden" name="posts[user_id]" value="<%=current_user.id%>">
     
-     <div class="input-field">
-    <input id="location" name="posts[location]" type="location">
-    <label for="location">Where did you go, Nomad ?</label>
-  </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="image_url" type="text" name="posts[image_url]" class="validate">
+        <label for="image_url">Travel Photo</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea id="journal" class="materialize-textarea" name="posts[journal]"></textarea>
+        <label for="journal">Journal</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="location" type="text" name="posts[location]" class="validate">
+        <label for="location">Location</label>
+      </div>
+    </div>
+    
+  
+ 
+    </div>
+    <button type="submit" class="waves-effect waves-light btn-small cyan accent-4"> Submit</button>
+  </form>
+</div>
 
-  <div class="input-field">
-    <input id="image_url" name="posts[image_url]" type="image_url">
-    <label for="image_url">Travel Photo</label>
-  </div>
- 
-  <div class="input-field">
-    <input id="journal" name="posts[journal]" type="journal">
-    <label for="journal">Your Experience</label>
-  </div>
- 
-          <button class="btn"  type="submit" name="action">Share your experience </button>
+
+
+
+
+</div>
+
+
+
 
 </form>
+</div>
