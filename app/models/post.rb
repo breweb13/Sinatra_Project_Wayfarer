@@ -2,5 +2,5 @@ class Post < ActiveRecord::Base
     
     belongs_to :user
 
-    validates :location, :image_url, :journal ,presence: true #make sure user enters everything correctly
+    validates :location, :journal, :image_url, presence: true
 end
