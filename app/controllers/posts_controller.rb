@@ -20,7 +20,6 @@ class PostsController < ApplicationController
 
     post '/posts' do
         @post = Post.new(params[:posts])
-        #binding.pry
         if @post.save
           flash[:message] = "Post created successfully!"
           redirect "/posts/#{@post.id}"
