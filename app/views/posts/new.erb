@@ -1,9 +1,24 @@
 <h1>Make a new post here !</h1>
 
+
 <form action="/posts" method="post">
-   
-   Photo:<input type="text" name="image_url" value="">
-   Location: <input type="text" name="Location">
-   Journal: <input type="text" name="Journal">
-    <input type="submit" value= "Create Post" >
+<input type="hidden" name="posts[user_id]" value="<%=current_user.id%>">
+    
+     <div class="input-field">
+    <input id="location" name="posts[location]" type="location">
+    <label for="location">Where did you go, Nomad ?</label>
+  </div>
+
+  <div class="input-field">
+    <input id="image_url" name="posts[image_url]" type="image_url">
+    <label for="image_url">Travel Photo</label>
+  </div>
+ 
+  <div class="input-field">
+    <input id="journal" name="posts[journal]" type="journal">
+    <label for="journal">Your Experience</label>
+  </div>
+ 
+          <button class="btn"  type="submit" name="action">Share your experience </button>
+
 </form>
