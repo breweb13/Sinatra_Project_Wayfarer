@@ -1,8 +1,10 @@
 
 # Welcome to Sintra_Project_Wayfarer
 
+#flatironPhase2project
 
-Wayfarer is a web application built on Sinatra. It is a place for digital nomads to track and share their travel locations. 
+
+Wayfarer is a web application built on Sinatra. It is a place for digital nomads to track and share their travel locations. After signing up and logging in, you can view/create/delete/edit and edit your Nomad travels.
 
 ## To get started
 
