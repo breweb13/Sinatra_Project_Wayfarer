@@ -6,7 +6,7 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 
-use Rack::MethodOverride
+use Rack::MethodOverride #app will know how to handle patch and delete request
 
 use UsersController
 use PostsController
